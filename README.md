@@ -1,41 +1,40 @@
-# StreetForge Ops
+# STREETFORGE OPS
 
-> **Operational tooling for the StreetForge technology studio.**
+![Cinematic hero](https://capsule-render.vercel.app/api?type=rect&color=0:070707,100:171717&height=230&text=STREETFORGE%20OPS&fontColor=F3F3EE&fontSize=40&fontAlignY=38&desc=INTERNAL%20OPERATIONS&descColor=999991&descSize=12&descAlignY=66&animation=fadeIn)
 
-StreetForge Ops is part of K. Kishor Kumar's public engineering portfolio, exploring practical product ideas through modern web development and iterative prototyping.
+> **INTERNAL OPERATIONS.**
 
-## Highlights
+## THE PREMISE
 
-- Responsive product-oriented interface
-- Modular implementation designed for iteration
-- Clear separation between prototype concepts and production claims
-- Built as an independent engineering experiment
+StreetForge Ops is the operational layer for a technology studio: a focused workspace for turning projects, delivery work and system status into one coherent internal surface.
 
-## Stack
+## THE EXPERIENCE
+
+**Keep the studio moving.**  
+**Make work visible without making it noisy.**  
+**Design operations like a product.**
+
+## THE SYSTEM
+
+A reusable React/TypeScript application foundation for project tracking, service operations and internal analytics as the studio expands.
+
+## THE STACK
 
 React · TypeScript · Vite · Tailwind CSS
 
-## Run locally
+## RUN
 
-~~~bash
+```bash
 npm install
 npm run dev
-~~~
+```
 
-For a production build:
+## PROJECT STATE
 
-~~~bash
-npm run build
-~~~
+**Internal product prototype**
 
-## Status
-
-**Studio operations prototype**
-
-## Author
-
-**K. Kishor Kumar** · [GitHub @Kishordiu](https://github.com/Kishordiu)
+Implemented behaviour is documented separately from future integrations so the project story stays honest as the product evolves.
 
 ---
 
-<p align="center">Built with curiosity, iteration and engineering discipline.</p>
+<p align="center"><strong>K. KISHOR KUMAR</strong><br><sub>ENGINEERING / PRODUCT / SYSTEMS</sub></p>
