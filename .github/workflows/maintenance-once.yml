@@ -1,0 +1,70 @@
+name: One-time formatting maintenance
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/maintenance-once.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
+      - name: Install committed dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -f bun.lock ] || [ -f bun.lockb ]; then
+            bun install --frozen-lockfile
+            echo "PACKAGE_RUNNER=bun" >> "$GITHUB_ENV"
+          elif [ -f package-lock.json ]; then
+            npm ci
+            echo "PACKAGE_RUNNER=npm" >> "$GITHUB_ENV"
+          elif [ -f pnpm-lock.yaml ]; then
+            corepack enable
+            pnpm install --frozen-lockfile
+            echo "PACKAGE_RUNNER=pnpm" >> "$GITHUB_ENV"
+          else
+            echo "::error::No committed lockfile found."
+            exit 1
+          fi
+      - name: Apply ESLint autofixes
+        shell: bash
+        run: |
+          set -euo pipefail
+          ./node_modules/.bin/eslint . --fix || true
+      - name: Commit safe formatting fixes
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No autofixable changes were needed."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "style: apply lint autofixes"
+            git push
+          fi
+      - name: Verify production build
+        shell: bash
+        run: |
+          set -euo pipefail
+          if node -e "process.exit(require('./package.json').scripts?.build ? 0 : 1)"; then
+            "$PACKAGE_RUNNER" run build
+          else
+            echo "No build script is defined; skipping."
+          fi
