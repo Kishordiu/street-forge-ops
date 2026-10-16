@@ -24,9 +24,24 @@ React · TypeScript · Vite · Tailwind CSS
 
 ## RUN
 
+**Requirements:** Node.js 20+ and Bun.
+
 ```bash
-npm install
-npm run dev
+bun install
+bun run dev
+```
+
+For a production bundle and local preview:
+
+```bash
+bun run build
+bun run preview
+```
+
+Run static checks with:
+
+```bash
+bun run lint
 ```
 
 ## PROJECT STATE
