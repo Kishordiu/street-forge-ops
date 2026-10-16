@@ -5,12 +5,7 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  plugins: [
-    tanstackStart(),
-    nitro(),
-    react(),
-    tailwindcss(),
-  ],
+  plugins: [tanstackStart(), nitro(), react(), tailwindcss()],
   resolve: {
     tsconfigPaths: true,
   },

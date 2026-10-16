@@ -36,7 +36,7 @@ export function TopNav() {
                   "flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium transition-all",
                   active
                     ? "bg-gradient-primary text-primary-foreground shadow-elegant"
-                    : "text-muted-foreground hover:text-foreground hover:bg-white/50"
+                    : "text-muted-foreground hover:text-foreground hover:bg-white/50",
                 )}
               >
                 <Icon className="h-3.5 w-3.5" />
@@ -71,7 +71,9 @@ export function Footer() {
               </div>
               <div className="font-display font-semibold">Street Forge™ Intelligence Systems</div>
             </div>
-            <p className="mt-3 text-sm text-muted-foreground italic">"Engineering Resilient Intelligence."</p>
+            <p className="mt-3 text-sm text-muted-foreground italic">
+              "Engineering Resilient Intelligence."
+            </p>
           </div>
           <div className="text-sm">
             <div className="font-display font-semibold mb-2">Platform</div>
@@ -105,8 +107,14 @@ export function BlurBlobs() {
   return (
     <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 overflow-hidden bg-mesh">
       <div className="absolute -top-32 -left-32 h-96 w-96 rounded-full bg-primary/25 blur-3xl animate-blob" />
-      <div className="absolute top-1/3 -right-32 h-[28rem] w-[28rem] rounded-full bg-accent/25 blur-3xl animate-blob" style={{ animationDelay: "-6s" }} />
-      <div className="absolute bottom-0 left-1/3 h-96 w-96 rounded-full bg-[oklch(0.78_0.16_75/0.25)] blur-3xl animate-blob" style={{ animationDelay: "-12s" }} />
+      <div
+        className="absolute top-1/3 -right-32 h-[28rem] w-[28rem] rounded-full bg-accent/25 blur-3xl animate-blob"
+        style={{ animationDelay: "-6s" }}
+      />
+      <div
+        className="absolute bottom-0 left-1/3 h-96 w-96 rounded-full bg-[oklch(0.78_0.16_75/0.25)] blur-3xl animate-blob"
+        style={{ animationDelay: "-12s" }}
+      />
     </div>
   );
 }
