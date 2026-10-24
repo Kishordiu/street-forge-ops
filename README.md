@@ -1,6 +1,4 @@
-# STREETFORGE OPS
-
-![Cinematic hero](https://capsule-render.vercel.app/api?type=rect&color=0:070707,100:171717&height=230&text=STREETFORGE%20OPS&fontColor=F3F3EE&fontSize=40&fontAlignY=38&desc=INTERNAL%20OPERATIONS&descColor=999991&descSize=12&descAlignY=66&animation=fadeIn)
+![STREETFORGE OPS — bespoke brushed-metal project artwork](./assets/readme-metal-hero.svg)
 
 > **INTERNAL OPERATIONS.**
 
